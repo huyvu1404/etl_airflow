@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+  minio:
+    hostname: minio
+    image: "minio/minio"
+    container_name: minio
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
+      - MINIO_ACESS_KEY=minio
+      - MINIO_SECRET_KEY=minio123
+    ports:
+      - "9001:9001"
+      - "9000:9000"
+    command: [ "server", "/data", "--console-address", ":9001"]
+    volumes:
+      - 'minio:/data'
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    ports:
+      - "8081:5432"
+    environment:
+      - POSTGRES_DB="warehouse"
+      - POSTGRES_PASSWORD="root"
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  grafana:
+    image: grafana/grafana-oss
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+     - '3000:3000'
+    volumes:
+     - 'grafana_storage:/var/lib/grafana'
+
+volumes:
+  grafana_storage: {}
+  minio: {}
+
