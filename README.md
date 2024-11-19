@@ -23,43 +23,45 @@ This project is designed to build an ETL data pipeline specifically for Brazilia
 ```
 Set AIRFLOW_HOME to current directory:
 ``` bash
-export AIRFLOW_HOME=$(pwd)
+  export AIRFLOW_HOME=$(pwd)
 ```
 Initialize Airflow project:
 ``` bash
-airflow db init
+  airflow db init
 ``` 
 Create admin users:
 ``` bash
-airflow users create \
-        --username ... \
-        --firstname  ... \
-        --lastname ... \
-        --role ... \
-        --email ... 
+  airflow users create \
+         --username ... \
+         --firstname  ... \
+         --lastname ... \
+         --role ... \
+         --email ... 
 
 ```
-Run AIRFLOW webserver:
+Start AIRFLOW webserver:
 ``` bash
-airflow webserver -p 3030
+  airflow webserver -p 3030
 ```
-Run AIRFLOW scheduler:
+Start AIRFLOW scheduler:
 ``` bash
-airflow scheduler
+  airflow scheduler
 ```
 Start MinIO, Grafana and PostgreSQL containers
 ``` bash
-docker compose up -d
+  docker compose up -d
 ```
 Go to [http://localhost:9000](http://localhost:9000) create MinIO bucket and upload data to.
 
 
 
 ## Demo
-**DAG**
+**DAG:** 
+
 ![image](https://github.com/user-attachments/assets/e5775b5f-089a-4418-84ac-485e89aa7bb6)
 
-**Serving**
+**Serving:**
+
 ![image](https://github.com/user-attachments/assets/d406495d-2958-4ea3-ae42-1f95ef9c3173)
 
 
