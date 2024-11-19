@@ -56,10 +56,10 @@ Go to [http://localhost:9000](http://localhost:9000) create MinIO bucket and upl
 
 
 ## Demo
-** DAG **
+**DAG**
 ![image](https://github.com/user-attachments/assets/e5775b5f-089a-4418-84ac-485e89aa7bb6)
 
-** Serving **
+**Serving**
 ![image](https://github.com/user-attachments/assets/d406495d-2958-4ea3-ae42-1f95ef9c3173)
 
 
